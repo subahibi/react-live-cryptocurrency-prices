@@ -13,7 +13,7 @@
 .bitcoin {
   background-color: #fbe2c3;
   border-bottom: solid 4px #f7931a;
-}
+} 
 
 .ethereum {
   background-color: #c2c9ff;
@@ -31,6 +31,14 @@
 }
 
 .eos {
-  background-color: rgb(235, 235, 168);
-  border-bottom: solid 4px yellow;   
+  background-color: #ffffc4;
+  border-bottom: solid 4px #ffff3b;   
+} 
+
+.minus {
+  color: red;
+}
+
+.plus {
+  color: green;
 }

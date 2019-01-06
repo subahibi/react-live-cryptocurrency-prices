@@ -12,8 +12,8 @@ class Cryptocurrencies extends Component {
     axios
       .get("https://api.coinmarketcap.com/v1/ticker/?limit=5")
       .then(response => {
-        const cryptoData = response.data.map(element => element);
-        this.setState({ cryptocurrencyData: cryptoData });
+        const cryptocurrencyData = [...response.data];
+        this.setState({ cryptocurrencyData: cryptocurrencyData });
       })
       .catch(error => console.log(error));
   }
@@ -27,16 +27,15 @@ class Cryptocurrencies extends Component {
   }
 
   render() {
-    const cryptocData = this.state.cryptocurrencyData.map(element => (
-      <Cryptocurrency data={element} key={element.id} />
-    ));
+    const cryptocurrencies = this.state.cryptocurrencyData.map(
+      cryptocurrency => (
+        <Cryptocurrency data={cryptocurrency} key={cryptocurrency.id} />
+      )
+    );
+
     return (
       <div className="cryptocurrencies-container">
-        <ul className="cryptocurrencies">{cryptocData}</ul>
-        <p>
-          Information updated every 5 minute courtesy of{" "}
-          <a href="https://coinmarketcap.com/">coinmarketcap.com</a>
-        </p>
+        <ul className="cryptocurrencies">{cryptocurrencies}</ul>
       </div>
     );
   }

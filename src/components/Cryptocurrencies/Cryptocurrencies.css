@@ -1,5 +1,7 @@
 .cryptocurrencies {
+  margin-top: 50px;
   list-style-type: none;
   padding: 0;
   display: inline-flex;
 }
+
